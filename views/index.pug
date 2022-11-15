@@ -1,0 +1,39 @@
+extends layout
+
+block content
+
+  script(src="/javascripts/indexcode.js")
+
+  div(id="createForm" class="invisible")
+    h2 Add a Blog Entry! 
+      form(action='/add', method='POST')
+        div
+          div 
+            label(for="author") Whose writing?
+            input(name="author" id="author")
+
+          div
+            label(for="title") What is the title of this post?
+            input(name="title" id="title")
+
+          div 
+            label(for="content") Write away!
+            br()
+            textarea(name="content" id="content" rows="5" cols="60")
+
+        div
+          button(type="submit") Publish Entry!
+
+  button(type="button" onclick="showCreate()") Create New Post!
+
+
+  h1= title
+  
+  -
+    var list = data
+
+  each item in list
+    div
+      h1= item.title
+      h2= item.author
+      p= item.content 
