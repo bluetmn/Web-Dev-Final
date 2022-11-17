@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
           if (rows.length === 1) {
             console.log("Table exists already");
 
-            db.all(` SELECT author, title, content FROM blogEntries`, (err, rows) => {
+            db.all(` SELECT blog_id, author, title, content FROM blogEntries`, (err, rows) => {
               console.log("returning " + rows.length + " records");
               res.render('index', { title: 'Blog entries', data: rows});
             })
@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
               author VARCHAR,
               title VARCHAR NOT NULL, 
               content VARCHAR);`, () => {
-                db.all(` SELECT author, title, content FROM blogEntries`, (err, rows) => {
+                db.all(` SELECT blog_id, author, title, content FROM blogEntries`, (err, rows) => {
                   console.log("returning " + rows.length + " records");
                   res.render('index', { title: 'returned data', data: rows});
                 })

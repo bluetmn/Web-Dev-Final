@@ -29,4 +29,8 @@ TODO
 
 ## Sources used
 
-TODO
+https://www.sqlitetutorial.net/sqlite-nodejs/query/  
+https://www.tutorialbrain.com/css_tutorial/css_font_family_list/  
+https://pugjs.org/language/code.html  
+
+

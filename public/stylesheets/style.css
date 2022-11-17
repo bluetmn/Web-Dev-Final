@@ -1,17 +1,39 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-div {
-  padding: 10px;
-  border: 2px solid black;
+  font: 14px "Rockwell", Helvetica, Arial, sans-serif;
+  background-color: lavender;
 }
 
 .invisible {
   display: none;
 }
 
+.delete {
+  margin: 20px;
+}
+
+.main {
+  font-size: 50px;
+}
+
 a {
-  color: #00B7FF;
+  color: black;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.links {
+  background-color: yellow;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.links a {
+  float: left;
+}
+
+.entry {
+  border-radius: 20px;
+  border: 2px solid blue;
+  margin: 15px;
 }

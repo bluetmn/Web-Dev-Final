@@ -4,6 +4,7 @@ block content
 
   script(src="/javascripts/indexcode.js")
 
+
   div(id="createForm" class="invisible")
     h2 Add a Blog Entry! 
       form(action='/add', method='POST')
@@ -33,7 +34,10 @@ block content
     var list = data
 
   each item in list
-    div
+    div(class="entry")
       h1= item.title
       h2= item.author
       p= item.content 
+      p blog ID# - 
+      p= item.blog_id
+
