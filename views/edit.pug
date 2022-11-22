@@ -1,34 +1,77 @@
 extends layout
 
 block content
+    script(src="/javascripts/editcode.js")
 
-    h2 Delete a Post
-    div(class="delete")
-        form(action='/delete', method='POST')
-            label(for="delete_id") Enter the ID to delete 
-            input(name="delete_id" id="delete_id")
+    //
+        h2 Delete a Post
+        div(class="delete")
+            form(action='/delete', method='POST')
+                label(for="delete_id") Enter the ID to delete 
+                input(name="delete_id" id="delete_id")
 
-            button(type="submit") Delete Post Permanently 
+                button(type="submit") Delete Post Permanently 
 
-    h2 Edit a Post
-    div(class="edit")
-        form(action='/edit', method='POST')
-            div 
-                label(for="update_id") ID of post to update?
-                input(name="update_id" id="update_id")
+        h2 Edit a Post
+        div(class="edit")
+            form(action='/edit', method='POST')
+                div 
+                    label(for="update_id") ID of post to update?
+                    input(name="update_id" id="update_id")
 
-            div 
-                label(for="author") Updated Author?
-                input(name="author" id="author")
+                div 
+                    label(for="author") Updated Author?
+                    input(name="author" id="author")
+
+                div
+                    label(for="title") Updated Title?
+                    input(name="title" id="title")
+
+                div 
+                    label(for="content") Updated Content?
+                    br()
+                    textarea(name="content" id="content" rows="5" cols="60")
+
+                div
+                button(type="submit") Update Entry!
+
+    form(action='/search' method="POST" id="searchByName")
+        label(for="searchName") Search by Author 
+        input(name="searchName" id="searchName")
+
+        button(type="submit") Search! 
+
+    h1= title
+  
+    -
+        var list = data
+
+    if (list != null)
+        each item in list
+            div(class="entry")
+                h1= item.title
+                h2= item.author
+                p= item.content 
 
             div
-                label(for="title") Updated Title?
-                input(name="title" id="title")
+                form(action="/delete", method="POST")
+                    input(class="invisible" name="delete_id" value=item.blog_id)
+                    button(type="submit") Delete
 
-            div 
-                label(for="content") Updated Content?
-                br()
-                textarea(name="content" id="content" rows="5" cols="60")
+            button(onclick="showEdit()" id="showEditButton") Edit
 
-            div
-            button(type="submit") Update Entry!
+            div(class="edit" id="editFields" class="invisible")
+                form(action="/edit", method="POST")
+                    input(name="update_id" class="invisible" value=item.blog_id)
+
+                    label(for="author") Updated Author?
+                    input(name="author" id="author" value=item.author)
+
+                    label(for="title") Updated Title?
+                    input(name="title" id="title" value=item.title)
+
+                    label(for="content") Updated Content?
+                    br()
+                    textarea(name="content" id="content" rows="5" cols="60")=item.content
+
+                    button(type="submit") Update Entry!

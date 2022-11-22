@@ -32,5 +32,8 @@ TODO
 https://www.sqlitetutorial.net/sqlite-nodejs/query/  
 https://www.tutorialbrain.com/css_tutorial/css_font_family_list/  
 https://pugjs.org/language/code.html  
+https://pugjs.org/language/comments.html  
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea  
+
 
 

@@ -55,6 +55,35 @@ app.post('/edit', function(req, res) {
     });
 })
 
+app.post('/search', function(req, res) {
+  console.log("searching");
+  var db = new sqlite3.Database('mydb.sqlite3', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
+    (err) => {
+      if (err) {
+        console.log("error occurred: " + err);
+      }
+
+      db.all(` SELECT name FROM sqlite_master WHERE type='table' AND name = 'blogEntries'`, 
+        (err, rows) => {
+          if (rows.length === 1) {
+            db.all(` SELECT blog_id, author, title, content FROM blogEntries WHERE author='${req.body.searchName}'`, (err, rows) => {
+              if (rows.length === 0) {
+                res.render('edit', {title: 'No Matches Found', data: null})
+              }
+              
+              console.log("returning " + rows.length + " records");
+              res.render('edit', { title: 'Blog entries', data: rows});
+            })
+
+          }
+          else {
+            res.render('edit', { title: "Table is empty", data: null})              
+          }
+
+        })
+    })
+})
+
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/edit', editRouter);

@@ -25,7 +25,8 @@ block content
         div
           button(type="submit") Publish Entry!
 
-  button(type="button" onclick="showCreate()") Create New Post!
+  button(type="button" onclick="showCreate()" id="createButton") Create New Post!
+  button(type="button" onclick="hideCreate()" id="hideButton" class="invisible") Abandon Creation?
 
 
   h1= title
@@ -38,6 +39,5 @@ block content
       h1= item.title
       h2= item.author
       p= item.content 
-      p blog ID# - 
-      p= item.blog_id
+
 
