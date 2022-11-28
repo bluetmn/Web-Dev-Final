@@ -8,12 +8,28 @@ body {
   display: none;
 }
 
+button {
+  border-radius: 8px;
+  background-color: rgb(208, 37, 174);
+  color: white;
+  font-size: 20px;
+
+}
+
 .delete {
   margin: 20px;
 }
 
 .main {
   font-size: 50px;
+}
+
+.titletext {
+  border: 5px solid hsl(240, 100%, 50%);
+  border-radius: 50%;
+  padding: 12px;
+  transform: rotate(-10deg) translate(0px, -40px);
+  float: left;
 }
 
 a {
@@ -23,9 +39,10 @@ a {
 }
 
 .links {
-  background-color: yellow;
-  overflow: hidden;
+  clear: both;
+  background-color: rgb(208, 37, 174);
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .links a {
@@ -36,4 +53,5 @@ a {
   border-radius: 20px;
   border: 2px solid blue;
   margin: 15px;
+  padding: 10px;
 }

@@ -34,6 +34,8 @@ https://www.tutorialbrain.com/css_tutorial/css_font_family_list/
 https://pugjs.org/language/code.html  
 https://pugjs.org/language/comments.html  
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea  
+https://www.w3schools.com/css/css3_buttons.asp  
+https://learntheweb.courses/topics/float-clear/  
 
 
 

@@ -32,7 +32,7 @@ app.post('/delete', function(req, res) {
       }
 
       db.exec(`DELETE FROM blogEntries WHERE blog_id = ${req.body.delete_id}`);
-      res.redirect('/index');
+      res.render('message', {message: "Delete Successful"});
 
     });
 });
@@ -50,7 +50,7 @@ app.post('/edit', function(req, res) {
                                       title = '${req.body.title}',
                                       content = '${req.body.content}'
                                   WHERE blog_id = '${req.body.update_id}'`);
-      res.redirect('/index');
+      res.render('message', {message: "Edits Saved"});
 
     });
 })
