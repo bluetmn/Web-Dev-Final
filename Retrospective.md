@@ -21,11 +21,13 @@ Be safe CITE!
 
 ## Experience
 
-TODO
+I struggled a little bit with creating the routing modules for the express server. I spent hours and hours trying to figure out the problem, but I ended up just putting 
+the code for those requests into the app.js file which did end up working. I felt that the project was specified just fine and I didn't feel confused at any point. I was able to get most of the project
+done, however I did not implement the optional user sign in/verification. 
 
 ## Known issues or Bugs
 
-TODO
+There are no issues or bugs that I have found thus far.
 
 ## Sources used
 
