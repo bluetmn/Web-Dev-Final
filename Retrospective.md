@@ -1,7 +1,7 @@
 # Retrospective
 
-- name: Jane Doe
-- email: janedoe@u.boisestate.edu
+- name: Thomas Ryan
+- email: thomasryan808@u.boisestate.edu
 
 ## Instructions
 
